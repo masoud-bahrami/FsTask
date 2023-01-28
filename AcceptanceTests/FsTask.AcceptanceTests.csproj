@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="StepDefinitions\Drivers\Class1.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.13" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
@@ -31,6 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\src\API\FsTask.API.csproj" />
     <ProjectReference Include="..\src\ApplicationServices\FsTask.ApplicationServices.csproj" />
+    <ProjectReference Include="..\src\Domain\FsTask.Domain\FsTask.Domain.csproj" />
   </ItemGroup>
 
 </Project>

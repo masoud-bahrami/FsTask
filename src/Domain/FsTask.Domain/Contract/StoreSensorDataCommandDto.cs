@@ -2,6 +2,7 @@
 
 public class StoreSensorDataCommandDto
 {
+
     public string Id { get; set; }
     public long Timestamp { get; set; }
     public List<InstanceDto> Instances { get; set; }

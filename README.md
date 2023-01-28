@@ -11,6 +11,14 @@ These events can then be retrieved based on when they occurred. When fetching, h
 # How to run
 You need dotnet core 6. Also you can run the app using docker file.
 
+# Integration tests
+You can use integration test to import data to the [Quest DB](https://questdb.io/). 
+
+Use *FilteredDataHuman.json* file(exists in the *IntegrationTestProject*)  as a template to prepare the test data used in the integration test.
+
+# Time-series DB
+In the production environment, the data received from the sensors is stored in the []*Quest DB* database
+
 # Acceptance tests
 There are two acceptance schenario you can view in the FsTask.AcceptanceTests project.
 

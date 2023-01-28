@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FsTask.Domain", "src\Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FsTask.Bootstrapper", "src\Bootstrapper\FsTask.Bootstrapper.csproj", "{1455F408-097A-434B-A7EB-CF52E15DA4CB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{4445A7C6-7D27-468F-BD11-9042F7DDE757}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FsTask.IntegrationTests", "IntegrationTests\FsTask.IntegrationTests.csproj", "{17749D4F-84F0-45D4-9F84-1849843AE86E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,10 @@ Global
 		{1455F408-097A-434B-A7EB-CF52E15DA4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1455F408-097A-434B-A7EB-CF52E15DA4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1455F408-097A-434B-A7EB-CF52E15DA4CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17749D4F-84F0-45D4-9F84-1849843AE86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17749D4F-84F0-45D4-9F84-1849843AE86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17749D4F-84F0-45D4-9F84-1849843AE86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17749D4F-84F0-45D4-9F84-1849843AE86E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +75,7 @@ Global
 		{3A51A0F3-DC06-447C-8869-D171ABF3B9C1} = {17E9C448-2C45-483C-B2FB-C41CEB4BB6E8}
 		{EED63D2A-28DB-4F90-8040-4A586E5694D2} = {17E9C448-2C45-483C-B2FB-C41CEB4BB6E8}
 		{1455F408-097A-434B-A7EB-CF52E15DA4CB} = {17E9C448-2C45-483C-B2FB-C41CEB4BB6E8}
+		{17749D4F-84F0-45D4-9F84-1849843AE86E} = {4445A7C6-7D27-468F-BD11-9042F7DDE757}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F50AA42D-0DEC-439A-89A7-DE6ABE4AD2CD}

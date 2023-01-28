@@ -41,7 +41,10 @@ public class SensorEventsToGuestDbService : ISensorEventsService
     {
         var sensorData = new List<InstanceViewModel>();
 
-        var sql = $"select * from '{humanEnvironmentalStatistics}' WHERE timestamp >= {from} AND timestamp <= {to};";
+        var sql = $"select * from '{humanEnvironmentalStatistics}' " +
+                  $" WHERE timestamp " +
+                  $"BETWEEN {ToUnixTimeSeconds(long.Parse(from))} " +
+                  $"AND {ToUnixTimeSeconds(long.Parse(to))}";
 
         await using (var reader = await Fetch(sql))
         {
@@ -79,8 +82,12 @@ public class SensorEventsToGuestDbService : ISensorEventsService
     public async Task<DashboardReportViewModel> GetReport(long from, long to, string filter)
     {
         DashboardReportViewModel result = new DashboardReportViewModel();
-
-        var sql = $"select {filter} , timestamp  from 'human_environmental_statistics' WHERE timestamp >= {from} AND timestamp <= {to};";
+        
+        
+        var sql = $"select {filter} , timestamp  from '{humanEnvironmentalStatistics}'" +
+                  $" WHERE timestamp " +
+                  $"BETWEEN {ToUnixTimeSeconds(from)} " +
+                  $"AND {ToUnixTimeSeconds(to)}";
 
 
         await using var reader = await Fetch(sql);
@@ -90,6 +97,11 @@ public class SensorEventsToGuestDbService : ISensorEventsService
         }
 
         return result;
+    }
+
+    private static long ToUnixTimeSeconds(long from)
+    {
+        return DateTimeOffset.FromUnixTimeMilliseconds(from).ToUnixTimeSeconds();
     }
 
     private static void Add(DashboardReportViewModel result, long timeStamp, string yAxis)
