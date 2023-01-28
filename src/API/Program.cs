@@ -1,4 +1,6 @@
-using FsTask.ApplicationServices;
+using FsTask.Bootstrapper;
+using FsTask.QuestDB;
+using Microsoft.Extensions.Configuration;
 
 namespace FsTask.API
 {
@@ -6,13 +8,35 @@ namespace FsTask.API
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-            
+            var builder = WebApplication
+                    .CreateBuilder(new WebApplicationOptions
+                    {
+                        Args = args,
+                        ContentRootPath = Environment.CurrentDirectory
+                    });
+
+            builder.Host.ConfigureAppConfiguration(config =>
+            {
+                config.AddJsonFile("appsettings.json");
+            });
+            builder.Services.Configure<QuestDbConfig>(builder.Configuration.GetSection("QuestDbConfig"));
+
+
+            builder.Services.AddSingleton<QuestDbConfig>(sp => new QuestDbConfig
+            {
+                Host = "localhost",
+                Port = 9009,
+                UserName = "admin",
+                Password = "quest",
+                DataBase = "qdb",
+                NpsqlPort = 8812
+            });
+
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddScoped<IEventQueue, EventQueue>();
-            builder.Services.AddScoped<IStoreSensorEventService, StoreSensorEventService>();
-            builder. Services.AddHostedService<PullingSensorDataFromQueueHostedService>();
+            FsTaskBootstrapper.Run(builder.Services);
+
+            builder.Services.AddHostedService<PullingSensorDataFromQueueHostedService>();
 
             var app = builder.Build();
 

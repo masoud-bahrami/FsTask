@@ -30,8 +30,8 @@ public class PullingSensorDataFromQueueHostedService : IHostedService, IDisposab
 
         if (!string.IsNullOrWhiteSpace(dequeue.Item1))
         {
-            var service = scope.ServiceProvider.GetRequiredService<IStoreSensorEventService>();
-            service.Process(dequeue.Item2, at: dequeue.Item1).Wait();
+            var service = scope.ServiceProvider.GetRequiredService<ISensorEventsService>();
+            service.Save(dequeue.Item2, at: dequeue.Item1).Wait();
         }
     }
 

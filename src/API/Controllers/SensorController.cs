@@ -1,5 +1,5 @@
 ﻿using FsTask.ApplicationServices;
-using FsTask.Domain.Contracts;
+using FsTask.Domain.Contract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FsTask.API.Controllers
@@ -9,24 +9,32 @@ namespace FsTask.API.Controllers
     public class SensorController : ControllerBase
     {
         private readonly IEventQueue _eventQueue;
-        private readonly IStoreSensorEventService _storeSensorEventService;
-        public SensorController(IEventQueue eventQueue, IStoreSensorEventService storeSensorEventService)
+        private readonly ISensorEventsService _sensorEventsService;
+
+        public SensorController(IEventQueue eventQueue, ISensorEventsService sensorEventsService)
         {
             _eventQueue = eventQueue;
-            _storeSensorEventService = storeSensorEventService;
+            _sensorEventsService = sensorEventsService;
         }
 
         [HttpGet("events")]
-        public async Task<IActionResult> Get(string? from ="0", string? to = "0")
+        public async Task<IActionResult> Get(string? from = "0", string? to = "0")
         {
-            return Ok(await _storeSensorEventService.Get(from , to));
+            return Ok(await _sensorEventsService.Get(from, to));
+
+        }
+        
+        [HttpGet("events/report")]
+        public async Task<IActionResult> Get(long from, long to, string filter = "human")
+        {
+            return Ok(await _sensorEventsService.GetReport(from, to, filter));
 
         }
 
         [HttpGet("events/at/{at}")]
         public async Task<IActionResult> Get(string at)
         {
-            return Ok(await _storeSensorEventService.Get(at));
+            return Ok(await _sensorEventsService.Get(at));
 
         }
 

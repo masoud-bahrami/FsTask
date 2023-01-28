@@ -8,4 +8,6 @@ public static class SensorTableHeaders
     public const string VelX = "vel_x";
     public const string VelY = "vel_y";
     public const string TimeStamp = "timestamp";
+    public const string Detected = "detected";
+    public const string PositionDetected = "detected at postion ";
 }

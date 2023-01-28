@@ -1,0 +1,60 @@
+﻿//{
+//    "timestamp": {
+//        "$date": {
+//            "$numberLong": "1665429875743"
+//        }
+//    },
+//    "_id": {
+//        "$oid": "634455533cfb85d6b4a65bf2"
+//    },
+//    "instances": {
+//        "0": {
+//            "pos_x": 1.162,
+//            "pos_y": 5.852,
+//            "vel_x": 0,
+//            "vel_y": 0,
+//            "confidence": 0,
+//            "sensors": []
+//        },
+//        "1": {
+//            "pos_x": 4.067,
+//            "pos_y": 4.542,
+//            "vel_x": 0,
+//            "vel_y": 0,
+//            "confidence": 0,
+//            "sensors": []
+//        },
+//        "2": {
+//            "pos_x": 2.403,
+//            "pos_y": 5.495,
+//            "vel_x": 0,
+//            "vel_y": 0,
+//            "confidence": 0,
+//            "sensors": []
+//        },
+//        "3": {
+//            "pos_x": 2.918,
+//            "pos_y": 3.362,
+//            "vel_x": 0,
+//            "vel_y": 0,
+//            "confidence": 0,
+//            "sensors": []
+//        },
+//        "8": {
+//            "pos_x": 3.417,
+//            "pos_y": 4.081,
+//            "vel_x": 0,
+//            "vel_y": 0,
+//            "confidence": 0,
+//            "sensors": []
+//        },
+//        "11": {
+//            "pos_x": 1.433,
+//            "pos_y": 4.733,
+//            "vel_x": 0,
+//            "vel_y": 0,
+//            "confidence": 0,
+//            "sensors": []
+//        }
+//    }
+//}

@@ -2,6 +2,6 @@
 
 public class SensorApiDataViewModel
 {
-    public List<SensorDataViewModel> SensorData { get; init; }=new();
+    public List<SensorDataViewModel> SensorData { get; set; }=new();
     public object _links { get; set; }
 }

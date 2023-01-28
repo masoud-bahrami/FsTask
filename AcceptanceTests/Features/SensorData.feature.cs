@@ -198,6 +198,294 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.SkippableFactAttribute(DisplayName="Fetch sensor data based on time and human")]
+        [Xunit.TraitAttribute("FeatureTitle", "Sensor Data")]
+        [Xunit.TraitAttribute("Description", "Fetch sensor data based on time and human")]
+        [Xunit.TraitAttribute("Category", "receiving_data")]
+        [Xunit.TraitAttribute("Category", "fetchEvents_human_time")]
+        public virtual void FetchSensorDataBasedOnTimeAndHuman()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "receiving_data",
+                    "fetchEvents_human_time"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fetch sensor data based on time and human", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 23
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "timestamp",
+                            "human1",
+                            "human2",
+                            "human3"});
+                table4.AddRow(new string[] {
+                            "1662896469284",
+                            "detected",
+                            "",
+                            "detected"});
+                table4.AddRow(new string[] {
+                            "1662896469280",
+                            "detected",
+                            "detected",
+                            "detected"});
+                table4.AddRow(new string[] {
+                            "1662896469270",
+                            "detected",
+                            "",
+                            ""});
+                table4.AddRow(new string[] {
+                            "1662896469260",
+                            "",
+                            "detected",
+                            ""});
+                table4.AddRow(new string[] {
+                            "1662896469272",
+                            "",
+                            "detected",
+                            ""});
+#line 24
+ testRunner.Given("These human environmental statistics was received from sensors", ((string)(null)), table4, "Given ");
+#line hidden
+#line 31
+ testRunner.When("Fetching human environmental statistics based on time and human between \'16628964" +
+                        "69270\' and \'1662896469280\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "timestamp",
+                            "human1",
+                            "human2",
+                            "human3"});
+                table5.AddRow(new string[] {
+                            "1662896469270",
+                            "detected",
+                            "",
+                            ""});
+                table5.AddRow(new string[] {
+                            "1662896469272",
+                            "",
+                            "detected",
+                            ""});
+                table5.AddRow(new string[] {
+                            "1662896469280",
+                            "detected",
+                            "detected",
+                            "detected"});
+#line 32
+ testRunner.Then("The event data will be fetched as follow", ((string)(null)), table5, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Fetch sensor data based on time and position x")]
+        [Xunit.TraitAttribute("FeatureTitle", "Sensor Data")]
+        [Xunit.TraitAttribute("Description", "Fetch sensor data based on time and position x")]
+        [Xunit.TraitAttribute("Category", "receiving_data")]
+        [Xunit.TraitAttribute("Category", "fetchEvents_positionX_time")]
+        public virtual void FetchSensorDataBasedOnTimeAndPositionX()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "receiving_data",
+                    "fetchEvents_positionX_time"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fetch sensor data based on time and position x", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 39
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "timestamp",
+                            "human1",
+                            "human2",
+                            "human3"});
+                table6.AddRow(new string[] {
+                            "1662896469284",
+                            "detected at postion 1.5-2.1",
+                            "",
+                            "detected at postion 10.2-2.1"});
+                table6.AddRow(new string[] {
+                            "1662896469280",
+                            "detected at postion 5.2-2.1",
+                            "detected at postion 1.4-2.1",
+                            "detected at postion 10.2-2.1"});
+                table6.AddRow(new string[] {
+                            "1662896469270",
+                            "detected at postion 5.0-2.6",
+                            "",
+                            ""});
+                table6.AddRow(new string[] {
+                            "1662896469260",
+                            "",
+                            "detected at postion 10.2-2.1",
+                            ""});
+                table6.AddRow(new string[] {
+                            "1662896469272",
+                            "",
+                            "detected at postion 12.9-2.1",
+                            ""});
+#line 40
+ testRunner.Given("These position x of human environmental statistics was received from sensors", ((string)(null)), table6, "Given ");
+#line hidden
+#line 47
+ testRunner.When("Fetching human environmental statistics based on time and x position between \'166" +
+                        "2896469270\' and \'1662896469280\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "timestamp",
+                            "human1\'s x position",
+                            "human2\'s x position",
+                            "human3\'s x position"});
+                table7.AddRow(new string[] {
+                            "1662896469270",
+                            "5.0",
+                            "",
+                            ""});
+                table7.AddRow(new string[] {
+                            "1662896469272",
+                            "",
+                            "12.9",
+                            ""});
+                table7.AddRow(new string[] {
+                            "1662896469280",
+                            "5.2",
+                            "1.4",
+                            "10.2"});
+#line 48
+ testRunner.Then("The event data of position x series will be fetched as follow", ((string)(null)), table7, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Fetch sensor data based on time and position y")]
+        [Xunit.TraitAttribute("FeatureTitle", "Sensor Data")]
+        [Xunit.TraitAttribute("Description", "Fetch sensor data based on time and position y")]
+        [Xunit.TraitAttribute("Category", "receiving_data")]
+        [Xunit.TraitAttribute("Category", "fetchEvents_positionX_time")]
+        public virtual void FetchSensorDataBasedOnTimeAndPositionY()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "receiving_data",
+                    "fetchEvents_positionX_time"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Fetch sensor data based on time and position y", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 56
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "timestamp",
+                            "human1",
+                            "human2",
+                            "human3"});
+                table8.AddRow(new string[] {
+                            "1662896469284",
+                            "detected at postion 1.5-2.1",
+                            "",
+                            "detected at postion 10.2-2.1"});
+                table8.AddRow(new string[] {
+                            "1662896469280",
+                            "detected at postion 5.2-2.1",
+                            "detected at postion 1.4-2.1",
+                            "detected at postion 10.2-2.1"});
+                table8.AddRow(new string[] {
+                            "1662896469270",
+                            "detected at postion 5.0-2.6",
+                            "",
+                            ""});
+                table8.AddRow(new string[] {
+                            "1662896469260",
+                            "",
+                            "detected at postion 10.2-2.1",
+                            ""});
+                table8.AddRow(new string[] {
+                            "1662896469272",
+                            "",
+                            "detected at postion 12.9-2.1",
+                            ""});
+#line 57
+ testRunner.Given("These position y of human environmental statistics was received from sensors", ((string)(null)), table8, "Given ");
+#line hidden
+#line 64
+ testRunner.When("Fetching human environmental statistics based on time and y position between \'166" +
+                        "2896469270\' and \'1662896469280\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "timestamp",
+                            "human1\'s y position",
+                            "human2\'s y position",
+                            "human3\'s y position"});
+                table9.AddRow(new string[] {
+                            "1662896469270",
+                            "2.6",
+                            "",
+                            ""});
+                table9.AddRow(new string[] {
+                            "1662896469272",
+                            "",
+                            "2.1",
+                            ""});
+                table9.AddRow(new string[] {
+                            "1662896469280",
+                            "2.1",
+                            "2.1",
+                            "2.1"});
+#line 65
+ testRunner.Then("The event data of position y series will be fetched as follow", ((string)(null)), table9, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

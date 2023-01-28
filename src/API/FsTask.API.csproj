@@ -27,7 +27,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Bootstrapper\FsTask.Bootstrapper\FsTask.Bootstrapper.csproj" />
     <ProjectReference Include="..\ApplicationServices\FsTask.ApplicationServices.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
