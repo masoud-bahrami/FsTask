@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\ApplicationServices\FsTask.ApplicationServices.csproj" />
+    <ProjectReference Include="..\ApplicationServices\FsTask.ApplicationServices.csproj" />
   </ItemGroup>
 
 </Project>

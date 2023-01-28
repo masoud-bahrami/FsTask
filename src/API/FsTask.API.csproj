@@ -27,8 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Bootstrapper\FsTask.Bootstrapper\FsTask.Bootstrapper.csproj" />
     <ProjectReference Include="..\ApplicationServices\FsTask.ApplicationServices.csproj" />
+    <ProjectReference Include="..\Bootstrapper\FsTask.Bootstrapper.csproj" />
+    <ProjectReference Include="..\FsTask.QuestDB\FsTask.QuestDB.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -16,7 +16,6 @@ namespace FsTask.Bootstrapper
         {
             builderServices.AddScoped<IEventQueue, MyEventQueue>();
             builderServices.AddSingleton<ISensorEventsService, SensorEventsService>();
-            //builderServices.AddScoped<ISensorEventsService, SensorEventsToGuestDbService>();
         }
     }
 }
